@@ -1,760 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Jinee Singh - CS Student | Machine Learning & Software Development">
-    <title>Jinee Singh | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Devicons for tech logos -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Jinee Singh - CS Student | Machine Learning & Software Development" />
+  <title>Jinee Singh | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="#home">JS<span>.</span></a>
-            </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#certifications" class="nav-link">Achievements</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <nav class="navbar" id="navbar">
+    <div class="container nav-wrap">
+      <a class="logo" href="#home">JS.</a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certifications" class="nav-link">Achievements</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light theme"><i class="fas fa-sun"></i></button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <div class="hero-stickers">
+          <div class="sticker sticker-1"><i class="fas fa-brain"></i></div>
+          <div class="sticker sticker-2"><i class="fas fa-code"></i></div>
+          <div class="sticker sticker-3"><i class="fas fa-rocket"></i></div>
         </div>
-    </nav>
+        <p class="hero-greeting">HELLO, I'M</p>
+        <h1 class="hero-name">Jinee Singh</h1>
+        <h2 class="hero-role">CS Student | <span id="dynamic-role">Software Developer</span></h2>
+        <p class="hero-tagline">Third-year BTech student specializing in Machine Learning and Software Engineering. Building intelligent systems and practical solutions that solve real-world problems.</p>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-background">
-            <div class="hero-shape shape-1"></div>
-            <div class="hero-shape shape-2"></div>
-            <div class="hero-shape shape-3"></div>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary"><i class="fas fa-folder-open"></i> View Projects</a>
+          <a href="https://drive.google.com/file/d/1pUNu7v1PPphApADoZgRTqtsG4HhD1YZF/view?usp=sharing" target="_blank" class="btn btn-secondary"><i class="fas fa-download"></i> Download Resume</a>
+          <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
         </div>
-        <div class="container hero-content">
-            <div class="hero-text">
-                <p class="hero-greeting">Hello, I'm</p>
-                <h1 class="hero-name">Jinee Singh</h1>
-                <h2 class="hero-role">
-                    <span class="role-static">CS Student | </span>
-                    <span class="role-rotating" id="rotating-role"></span>
-                </h2>
-                <p class="hero-tagline">Third-year BTech student specializing in Machine Learning and Software Engineering. Building intelligent systems and practical solutions that solve real-world problems.</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">
-                        <i class="fas fa-folder-open"></i> View Projects
-                    </a>
-                    <a href="#" class="btn btn-secondary" id="download-resume">
-                        <i class="fas fa-download"></i> Download Resume
-                    </a>
-                    <a href="#contact" class="btn btn-outline">
-                        <i class="fas fa-envelope"></i> Contact Me
-                    </a>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/jinee-s" target="_blank" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/jinee-singh-603826291/" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:jineesingh1015@gmail.com" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://leetcode.com/u/jinee_123/" target="_blank" aria-label="LeetCode">
-                        <i class="fas fa-code"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="image-placeholder">
-                    <i class="fas fa-user-circle"></i>
-                </div>
-            </div>
+
+        <div class="socials">
+          <a href="https://github.com/jinee-s" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/jinee-singh-603826291/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:jineesingh1015@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://leetcode.com/u/jinee_123/" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
         </div>
-        <div class="scroll-indicator">
-            <a href="#about">
-                <i class="fas fa-chevron-down"></i>
-            </a>
+      </div>
+
+      <div class="profile-card">
+        <img src="photo.jpeg" alt="Jinee Singh" id="profile-photo" />
+        <div class="photo-fallback" id="photo-fallback"><i class="fas fa-user-circle"></i></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2>About Me</h2>
+        <p class="section-subtitle">Get to know me better</p>
+      </div>
+
+      <div class="about-content">
+        <div class="about-text">
+          <p>I am a third-year BTech Computer Science student specializing in Machine Learning. I enjoy building intelligent systems and practical software solutions that solve real-world problems. My primary interests lie in Machine Learning, Data Structures & Algorithms, and backend development.</p>
+          <p>I like combining theoretical knowledge with hands-on projects. Recently, I have worked on machine learning systems such as a borewell water quality monitoring model and an anomaly detection system for motors. I also enjoy building web applications and integrating AI APIs to create interactive tools.</p>
+          <p>What makes me unique is my curiosity to explore both software development and AI together. I focus on writing clean, logical code and continuously improving my problem-solving skills through DSA practice and real-world projects.</p>
+
+          <div class="about-stats">
+            <div class="stat-item"><h3>10+</h3><p>Projects Completed</p></div>
+            <div class="stat-item"><h3>8.14</h3><p>CGPA</p></div>
+            <div class="stat-item"><h3>100%</h3><p>Dedication</p></div>
+          </div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <div class="title-underline"></div>
-                <p class="section-subtitle">Get to know me better</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="about-intro">
-                        I am a third-year BTech Computer Science student specializing in Machine Learning. I enjoy building intelligent systems and practical software solutions that solve real-world problems. My primary interests lie in Machine Learning, Data Structures & Algorithms, and backend development.
-                    </p>
-                    <p>
-                        I like combining theoretical knowledge with hands-on projects. Recently, I have worked on machine learning systems such as a borewell water quality monitoring model and an anomaly detection system for motors. I also enjoy building web applications and integrating AI APIs to create interactive tools.
-                    </p>
-                    <p>
-                        What makes me unique is my curiosity to explore both software development and AI together. I focus on writing clean, logical code and continuously improving my problem-solving skills through DSA practice and real-world projects.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <h3>10+</h3>
-                            <p>Projects Completed</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>8.14</h3>
-                            <p>CGPA</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>100%</h3>
-                            <p>Dedication</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-highlights">
-                    <div class="highlight-card">
-                        <div class="highlight-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h3>Quick Learner</h3>
-                        <p>Rapidly adapt to new technologies and frameworks, staying current with industry trends.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="highlight-icon">
-                            <i class="fas fa-puzzle-piece"></i>
-                        </div>
-                        <h3>Problem Solver</h3>
-                        <p>Strong foundation in DSA with continuous practice on LeetCode and GeeksforGeeks. Love solving complex algorithmic challenges.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="highlight-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Practical Builder</h3>
-                        <p>Focus on building scalable, real-world solutions using modern technologies and clean code practices.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="about-highlights">
+          <article class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-lightbulb"></i></div>
+            <div><h3>Quick Learner</h3><p>Rapidly adapt to new technologies and frameworks, staying current with industry trends.</p></div>
+          </article>
+          <article class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-puzzle-piece"></i></div>
+            <div><h3>Problem Solver</h3><p>Strong foundation in DSA with continuous practice on LeetCode and GeeksforGeeks. Love solving complex algorithmic challenges.</p></div>
+          </article>
+          <article class="highlight-card">
+            <div class="highlight-icon"><i class="fas fa-users"></i></div>
+            <div><h3>Practical Builder</h3><p>Focus on building scalable, real-world solutions using modern technologies and clean code practices.</p></div>
+          </article>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Skills & Technologies</h2>
-                <div class="title-underline"></div>
-                <p class="section-subtitle">My technical expertise</p>
-            </div>
-            <div class="skills-grid">
-                <!-- Programming Languages -->
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-code"></i>
-                        <h3>Programming Languages</h3>
-                    </div>
-                    <div class="skill-icons">
-                        <div class="skill-icon-item" title="C++">
-                            <i class="devicon-cplusplus-plain colored"></i>
-                            <span>C++</span>
-                            <div class="skill-level">90%</div>
-                        </div>
-                        <div class="skill-icon-item" title="Java">
-                            <i class="devicon-java-plain colored"></i>
-                            <span>Java</span>
-                            <div class="skill-level">80%</div>
-                        </div>
-                        <div class="skill-icon-item" title="Python">
-                            <i class="devicon-python-plain colored"></i>
-                            <span>Python</span>
-                            <div class="skill-level">75%</div>
-                        </div>
-                        <div class="skill-icon-item" title="JavaScript">
-                            <i class="devicon-javascript-plain colored"></i>
-                            <span>JavaScript</span>
-                            <div class="skill-level">65%</div>
-                        </div>
-                    </div>
-                </div>
+  <section class="section alt" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <h2>Skills & Technologies</h2>
+        <p class="section-subtitle">My technical expertise</p>
+      </div>
 
-                <!-- Frontend Development -->
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-palette"></i>
-                        <h3>Frontend Development</h3>
-                    </div>
-                    <div class="skill-icons">
-                        <div class="skill-icon-item" title="HTML5">
-                            <i class="devicon-html5-plain colored"></i>
-                            <span>HTML5</span>
-                            <div class="skill-level">85%</div>
-                        </div>
-                        <div class="skill-icon-item" title="CSS3">
-                            <i class="devicon-css3-plain colored"></i>
-                            <span>CSS3</span>
-                            <div class="skill-level">80%</div>
-                        </div>
-                        <div class="skill-icon-item" title="JavaScript">
-                            <i class="devicon-javascript-plain colored"></i>
-                            <span>JavaScript</span>
-                            <div class="skill-level">65%</div>
-                        </div>
-                    </div>
-                </div>
+      <div class="skills-grid">
+        <article class="skill-card">
+          <h3><i class="fas fa-code"></i> Programming Languages</h3>
+          <div class="skill-row"><span>C++</span><span>90%</span><div class="bar"><i style="width:90%"></i></div></div>
+          <div class="skill-row"><span>Java</span><span>80%</span><div class="bar"><i style="width:80%"></i></div></div>
+          <div class="skill-row"><span>Python</span><span>75%</span><div class="bar"><i style="width:75%"></i></div></div>
+          <div class="skill-row"><span>JavaScript</span><span>65%</span><div class="bar"><i style="width:65%"></i></div></div>
+        </article>
 
-                <!-- Backend Development -->
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-server"></i>
-                        <h3>Backend Development</h3>
-                    </div>
-                    <div class="skill-icons">
-                        <div class="skill-icon-item" title="Node.js">
-                            <i class="devicon-nodejs-plain colored"></i>
-                            <span>Node.js</span>
-                            <div class="skill-level">60%</div>
-                        </div>
-                        <div class="skill-icon-item" title="Express.js">
-                            <i class="devicon-express-original"></i>
-                            <span>Express</span>
-                            <div class="skill-level">60%</div>
-                        </div>
-                        <div class="skill-icon-item" title="MongoDB">
-                            <i class="devicon-mongodb-plain colored"></i>
-                            <span>MongoDB</span>
-                            <div class="skill-level">60%</div>
-                        </div>
-                    </div>
-                </div>
+        <article class="skill-card">
+          <h3><i class="fas fa-palette"></i> Frontend Development</h3>
+          <div class="skill-row"><span>HTML5</span><span>85%</span><div class="bar"><i style="width:85%"></i></div></div>
+          <div class="skill-row"><span>CSS3</span><span>80%</span><div class="bar"><i style="width:80%"></i></div></div>
+          <div class="skill-row"><span>JavaScript</span><span>65%</span><div class="bar"><i style="width:65%"></i></div></div>
+        </article>
 
-                <!-- Machine Learning -->
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-brain"></i>
-                        <h3>Machine Learning</h3>
-                    </div>
-                    <div class="skill-icons">
-                        <div class="skill-icon-item" title="NumPy">
-                            <i class="devicon-numpy-plain colored"></i>
-                            <span>NumPy</span>
-                            <div class="skill-level">75%</div>
-                        </div>
-                        <div class="skill-icon-item" title="Pandas">
-                            <i class="devicon-pandas-plain colored"></i>
-                            <span>Pandas</span>
-                            <div class="skill-level">75%</div>
-                        </div>
-                        <div class="skill-icon-item" title="PyTorch">
-                            <i class="devicon-pytorch-plain colored"></i>
-                            <span>PyTorch</span>
-                            <div class="skill-level">60%</div>
-                        </div>
-                        <div class="skill-icon-item" title="TensorFlow">
-                            <i class="devicon-tensorflow-original colored"></i>
-                            <span>TensorFlow</span>
-                            <div class="skill-level">60%</div>
-                        </div>
-                    </div>
-                </div>
+        <article class="skill-card">
+          <h3><i class="fas fa-server"></i> Backend Development</h3>
+          <div class="skill-row"><span>Node.js</span><span>60%</span><div class="bar"><i style="width:60%"></i></div></div>
+          <div class="skill-row"><span>REST APIs</span><span>60%</span><div class="bar"><i style="width:60%"></i></div></div>
+        </article>
 
-                <!-- Tools & Technologies -->
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-tools"></i>
-                        <h3>Tools & Technologies</h3>
-                    </div>
-                    <div class="skill-icons">
-                        <div class="skill-icon-item" title="Git">
-                            <i class="devicon-git-plain colored"></i>
-                            <span>Git</span>
-                            <div class="skill-level">75%</div>
-                        </div>
-                        <div class="skill-icon-item" title="GitHub">
-                            <i class="devicon-github-original"></i>
-                            <span>GitHub</span>
-                            <div class="skill-level">75%</div>
-                        </div>
-                        <div class="skill-icon-item" title="MySQL">
-                            <i class="devicon-mysql-plain colored"></i>
-                            <span>MySQL</span>
-                            <div class="skill-level">75%</div>
-                        </div>
-                        <div class="skill-icon-item" title="AWS">
-                            <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
-                            <span>AWS</span>
-                            <div class="skill-level">65%</div>
-                        </div>
-                    </div>
-                </div>
+        <article class="skill-card">
+          <h3><i class="fas fa-brain"></i> Machine Learning</h3>
+          <div class="skill-row"><span>XGBoost</span><span>70%</span><div class="bar"><i style="width:70%"></i></div></div>
+          <div class="skill-row"><span>Scikit-learn</span><span>70%</span><div class="bar"><i style="width:70%"></i></div></div>
+          <div class="skill-row"><span>TensorFlow / PyTorch</span><span>60%</span><div class="bar"><i style="width:60%"></i></div></div>
+        </article>
 
-                <!-- Additional Skills -->
-                <div class="skill-category">
-                    <div class="category-header">
-                        <i class="fas fa-star"></i>
-                        <h3>Core Competencies</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Data Structures</span>
-                        <span class="skill-tag">Algorithms</span>
-                        <span class="skill-tag">Problem Solving</span>
-                        <span class="skill-tag">Machine Learning</span>
-                        <span class="skill-tag">Deep Learning</span>
-                        <span class="skill-tag">OOP</span>
-                        <span class="skill-tag">API Development</span>
-                        <span class="skill-tag">Computer Vision</span>
-                    </div>
-                </div>
-            </div>
+        <article class="skill-card">
+          <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+          <div class="skill-row"><span>Git & GitHub</span><span>75%</span><div class="bar"><i style="width:75%"></i></div></div>
+          <div class="skill-row"><span>MySQL</span><span>75%</span><div class="bar"><i style="width:75%"></i></div></div>
+          <div class="skill-row"><span>MongoDB</span><span>60%</span><div class="bar"><i style="width:60%"></i></div></div>
+        </article>
+
+        <article class="skill-card">
+          <h3><i class="fas fa-star"></i> Core Competencies</h3>
+          <div class="tags">
+            <span>Data Structures</span><span>Algorithms</span><span>Problem Solving</span><span>Machine Learning</span>
+            <span>Deep Learning</span><span>OOP</span><span>API Development</span><span>Computer Vision</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2>Featured Projects</h2>
+        <p class="section-subtitle">Showcasing my best work</p>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card project-card">
+          <h3>Skin Disease Detection using Vision Transformer</h3>
+          <p class="problem"><strong>Problem:</strong> Early identification of skin diseases is crucial but time-consuming for healthcare professionals, leading to delayed diagnosis.</p>
+          <p>A deep learning system that detects skin diseases from images using Vision Transformer (ViT) model for accurate medical image classification.</p>
+          <p class="muted"><strong>Tech:</strong> Python, Vision Transformer, PyTorch, OpenCV, NumPy</p>
+          <ul class="feature-list"><li>Real-time skin disease classification</li><li>ViT-based deep learning model</li><li>Image preprocessing and feature extraction</li><li>High accuracy predictions</li></ul>
+          <div class="card-links">
+            <a href="https://github.com/jinee-s/SkinDisease-ViT" target="_blank" class="link-btn github-btn"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://github.com/jinee-s/SkinDisease-ViT" target="_blank" class="link-btn view-btn">View Project</a>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <h3>Water Quality & Motor Monitoring System</h3>
+          <p class="problem"><strong>Problem:</strong> Unsafe water conditions and motor failures lead to costly repairs and unreliable water supply systems.</p>
+          <p>An AI-based monitoring system that analyzes borewell water quality and detects anomalies in motor behavior to prevent failures and ensure safe water usage.</p>
+          <p class="muted"><strong>Tech:</strong> Python, XGBoost, Autoencoder, Pandas, Scikit-learn</p>
+          <ul class="feature-list"><li>Water quality classification</li><li>Motor anomaly detection</li><li>Feature engineering pipeline</li><li>Predictive maintenance system</li></ul>
+          <div class="card-links">
+            <a href="https://github.com/jinee-s/Water-Quality-Motor-Monitoring-System" target="_blank" class="link-btn github-btn"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://github.com/jinee-s/Water-Quality-Motor-Monitoring-System" target="_blank" class="link-btn view-btn">View Project</a>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <h3>Nepali RAG System</h3>
+          <p class="problem"><strong>Problem:</strong> Limited AI tools exist for querying large document collections in Nepali language with contextual understanding.</p>
+          <p>A Retrieval-Augmented Generation (RAG) system that enables intelligent querying of Nepali documents with contextual understanding and semantic search capabilities.</p>
+          <p class="muted"><strong>Tech:</strong> Python, LangChain, Vector DB, Embeddings, LLM</p>
+          <ul class="feature-list"><li>Context-aware QA</li><li>RAG architecture</li><li>Custom corpus support</li><li>Nepali language support</li></ul>
+          <div class="card-links">
+            <a href="https://github.com/jinee-s/Nepali-RAG-System" target="_blank" class="link-btn github-btn"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://github.com/jinee-s/Nepali-RAG-System" target="_blank" class="link-btn view-btn">View Project</a>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <h3>Educator Recruitment Portal</h3>
+          <p class="problem"><strong>Problem:</strong> Institutions struggle to efficiently find qualified educators while teachers face fragmented job opportunity platforms.</p>
+          <p>A full-stack SaaS recruitment platform connecting educational institutions with qualified educators, featuring role-based access, job management workflows, and subscription billing.</p>
+          <p class="muted"><strong>Tech:</strong> Node.js, Express.js, MongoDB, EJS, AWS S3</p>
+          <ul class="feature-list"><li>Role-based authentication</li><li>Job management workflows</li><li>Subscription SaaS model</li><li>AWS S3 storage integration</li></ul>
+          <div class="card-links">
+            <a href="https://github.com/jinee-s/Educator-Recruitment-Portal" target="_blank" class="link-btn github-btn"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://github.com/jinee-s/Educator-Recruitment-Portal" target="_blank" class="link-btn view-btn">View Project</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="certifications">
+    <div class="container">
+      <div class="section-header">
+        <h2>Achievements & Recognition</h2>
+        <p class="section-subtitle">Continuous learning & growth</p>
+      </div>
+
+      <div class="cards-grid">
+        <article class="card"><h3>OCI 2025: Certified AI Foundations Associate</h3><p>Oracle · Sep 2025</p><a class="inline-link" target="_blank" href="https://drive.google.com/file/d/1QBzNKQfvigS7uZwZDm-RZlNTZuRx9nBs/view?usp=drive_link">View Certificate</a></article>
+        <article class="card"><h3>Privacy and Security in Online Social Media</h3><p>NPTEL · May 2025</p><a class="inline-link" target="_blank" href="https://drive.google.com/file/d/1ih5k0OqAIR1-QLRL57jbgj2Dss_rVBZ_/view?usp=drive_link">View Certificate</a></article>
+        <article class="card"><h3>Computer Communications</h3><p>Coursera · Sep 2024</p><a class="inline-link" target="_blank" href="https://drive.google.com/file/d/14BJ8zCSCHm9MEMzAVDFPKNPPIAmQL0rQ/view?usp=drive_link">View Certificate</a></article>
+        <article class="card"><h3>Build Generative AI Apps with No-Code Tools</h3><p>Udemy · 2024</p><a class="inline-link" target="_blank" href="https://drive.google.com/file/d/1_x97w6N2kBKhxeo6M1HEHjgn0RdL-fWT/view?usp=sharing">View Certificate</a></article>
+        <article class="card"><h3>LeetCode Profile</h3><p>Problem Solving Platform</p><a class="inline-link" target="_blank" href="https://leetcode.com/u/jinee_123/">View Profile</a></article>
+        <article class="card"><h3>GeeksforGeeks Profile</h3><p>Coding Practice Platform</p><a class="inline-link" target="_blank" href="https://www.geeksforgeeks.org/profile/jineesini1ex">View Profile</a></article>
+      </div>
+
+      <div class="education-card card">
+        <h3>Education</h3>
+        <div class="edu-timeline">
+          <article class="edu-item">
+            <h4>B.Tech in Computer Science Engineering</h4>
+            <p class="edu-meta">Lovely Professional University · 2023 - 2027 · CGPA: 8.14</p>
+            <p><strong>Relevant Coursework:</strong> Machine Learning, Design and Analysis of Algorithms, Artificial Intelligence, Data Structures, Statistics and Probability</p>
+          </article>
+          <article class="edu-item">
+            <h4>Senior Secondary Education (12th)</h4>
+            <p class="edu-meta">Kendriya Vidyalaya · Passed: 2023</p>
+          </article>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Projects</h2>
-                <div class="title-underline"></div>
-                <p class="section-subtitle">Showcasing my best work</p>
-            </div>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="image-overlay">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Skin Disease Detection using Vision Transformer</h3>
-                        <p class="project-problem">
-                            <strong>Problem:</strong> Early identification of skin diseases is crucial but time-consuming for healthcare professionals, leading to delayed diagnosis.
-                        </p>
-                        <p class="project-description">
-                            A deep learning system that detects skin diseases from images using Vision Transformer (ViT) model for accurate medical image classification. Assists healthcare professionals in diagnostic speed and accuracy.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Vision Transformer</span>
-                            <span class="tech-tag">PyTorch</span>
-                            <span class="tech-tag">OpenCV</span>
-                            <span class="tech-tag">NumPy</span>
-                        </div>
-                        <div class="project-features">
-                            <h4>Key Features:</h4>
-                            <ul>
-                                <li>Real-time skin disease classification from images</li>
-                                <li>Vision Transformer-based deep learning model</li>
-                                <li>Image preprocessing and feature extraction</li>
-                                <li>High accuracy medical image prediction</li>
-                            </ul>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/jinee-s/SkinDisease-ViT" target="_blank" class="project-btn">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="https://github.com/jinee-s/SkinDisease-ViT" target="_blank" class="project-btn">
-                                <i class="fas fa-external-link-alt"></i> View Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2>Get In Touch</h2>
+        <p class="section-subtitle">Let's connect and collaborate</p>
+      </div>
 
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="image-overlay">
-                            <i class="fas fa-water"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Water Quality & Motor Monitoring System</h3>
-                        <p class="project-problem">
-                            <strong>Problem:</strong> Unsafe water conditions and motor failures lead to costly repairs and unreliable water supply systems.
-                        </p>
-                        <p class="project-description">
-                            An AI-based monitoring system that analyzes borewell water quality and detects anomalies in motor behavior to prevent failures and ensure safe water usage using machine learning and deep learning techniques.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">XGBoost</span>
-                            <span class="tech-tag">Autoencoder</span>
-                            <span class="tech-tag">Pandas</span>
-                            <span class="tech-tag">Scikit-learn</span>
-                        </div>
-                        <div class="project-features">
-                            <h4>Key Features:</h4>
-                            <ul>
-                                <li>Water quality classification using machine learning</li>
-                                <li>Motor anomaly detection using deep learning</li>
-                                <li>Data preprocessing and feature engineering</li>
-                                <li>Predictive maintenance system</li>
-                            </ul>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/jinee-s/Water-Quality-Motor-Monitoring-System" target="_blank" class="project-btn">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="https://github.com/jinee-s/Water-Quality-Motor-Monitoring-System" target="_blank" class="project-btn">
-                                <i class="fas fa-external-link-alt"></i> View Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
+      <div class="contact-grid">
+        <article class="card">
+          <h3>Let's Work Together</h3>
+          <p>I'm actively seeking SDE and Machine Learning opportunities for internships or full-time roles. Whether you have a project in mind, need a developer for your team, or just want to connect, I'd love to hear from you.</p>
+          <p><strong>Email:</strong> <a class="inline-link" href="mailto:jineesingh1015@gmail.com">jineesingh1015@gmail.com</a></p>
+          <p><strong>Phone:</strong> <a class="inline-link" href="tel:+916263333154">+91 6263333154</a></p>
+          <p><strong>Location:</strong> Madhya Pradesh, India</p>
+        </article>
 
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="image-overlay">
-                            <i class="fas fa-language"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Nepali RAG System</h3>
-                        <p class="project-problem">
-                            <strong>Problem:</strong> Limited AI tools exist for querying large document collections in Nepali language with contextual understanding.
-                        </p>
-                        <p class="project-description">
-                            A Retrieval-Augmented Generation (RAG) system designed for the Nepali language that enables context-aware question answering over custom document datasets using LLMs and vector embeddings.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">LangChain</span>
-                            <span class="tech-tag">Vector DB</span>
-                            <span class="tech-tag">Embeddings</span>
-                            <span class="tech-tag">LLM</span>
-                        </div>
-                        <div class="project-features">
-                            <h4>Key Features:</h4>
-                            <ul>
-                                <li>Context-aware document question answering</li>
-                                <li>Retrieval-Augmented Generation architecture</li>
-                                <li>Custom document corpus support</li>
-                                <li>Nepali language AI system</li>
-                            </ul>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/jinee-s/Nepali-RAG-System" target="_blank" class="project-btn">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="https://github.com/jinee-s/Nepali-RAG-System" target="_blank" class="project-btn">
-                                <i class="fas fa-external-link-alt"></i> View Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        <article class="card">
+          <h3>Quick Contact</h3>
+          <form class="contact-form" id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="text" placeholder="Subject" required>
+            <textarea placeholder="Message" rows="4" required></textarea>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
+          </form>
+        </article>
+      </div>
+    </div>
+  </section>
 
-                <!-- Project 4 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="image-overlay">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Educator Recruitment Portal</h3>
-                        <p class="project-problem">
-                            <strong>Problem:</strong> Institutions struggle to efficiently find qualified educators while teachers face fragmented job opportunity platforms.
-                        </p>
-                        <p class="project-description">
-                            A full-stack SaaS recruitment platform that connects educators with institutions and simplifies the hiring process through an online portal with subscription-based model and cloud storage integration.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Express.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">EJS</span>
-                            <span class="tech-tag">AWS S3</span>
-                        </div>
-                        <div class="project-features">
-                            <h4>Key Features:</h4>
-                            <ul>
-                                <li>Role-based authentication system</li>
-                                <li>Job posting and application management</li>
-                                <li>Subscription-based SaaS model</li>
-                                <li>Cloud storage integration using AWS S3</li>
-                            </ul>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/jinee-s/Educator-Recruitment-Portal" target="_blank" class="project-btn">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                            <a href="https://github.com/jinee-s/Educator-Recruitment-Portal" target="_blank" class="project-btn">
-                                <i class="fas fa-external-link-alt"></i> View Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <div>
+        <h3>Jinee Singh</h3>
+        <p>CS Student | Machine Learning & Software Development</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/jinee-s" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/jinee-singh-603826291/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://leetcode.com/u/jinee_123/" target="_blank"><i class="fas fa-code"></i></a>
+        <a href="mailto:jineesingh1015@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Jinee Singh. Built with ❤️ using HTML, CSS & JavaScript</div>
+  </footer>
 
-                <!-- End of Projects -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications & Achievements Section -->
-    <section class="certifications" id="certifications">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Achievements & Recognition</h2>
-                <div class="title-underline"></div>
-                <p class="section-subtitle">Continuous learning & growth</p>
-            </div>
-            <div class="certifications-grid">
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>OCI 2025: Certified AI Foundations Associate</h3>
-                    <p class="cert-issuer">Oracle</p>
-                    <p class="cert-date">Completed: September 2025</p>
-                    <p class="cert-description">
-                        Oracle Cloud Infrastructure certification covering AI fundamentals, machine learning concepts, and cloud-based AI services. Validated expertise in AI foundations and applications.
-                    </p>
-                    <a href="https://drive.google.com/file/d/1QBzNKQfvigS7uZwZDm-RZlNTZuRx9nBs/view?usp=drive_link" target="_blank" class="cert-verify">View Certificate <i class="fas fa-external-link-alt"></i></a>
-                </div>
-
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Privacy and Security in Online Social Media</h3>
-                    <p class="cert-issuer">NPTEL</p>
-                    <p class="cert-date">Completed: May 2025</p>
-                    <p class="cert-description">
-                        Comprehensive course on data privacy, security protocols, and protection mechanisms in social media platforms. Covered encryption, authentication, and privacy-preserving technologies.
-                    </p>
-                    <a href="https://drive.google.com/file/d/1ih5k0OqAIR1-QLRL57jbgj2Dss_rVBZ_/view?usp=drive_link" target="_blank" class="cert-verify">View Certificate <i class="fas fa-external-link-alt"></i></a>
-                </div>
-
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3>Computer Communications</h3>
-                    <p class="cert-issuer">Coursera</p>
-                    <p class="cert-date">Completed: September 2024</p>
-                    <p class="cert-description">
-                        In-depth study of computer networks, protocols, and communication systems. Covered TCP/IP, network architecture, routing, and modern networking technologies.
-                    </p>
-                    <a href="https://drive.google.com/file/d/14BJ8zCSCHm9MEMzAVDFPKNPPIAmQL0rQ/view?usp=drive_link" target="_blank" class="cert-verify">View Certificate <i class="fas fa-external-link-alt"></i></a>
-                </div>
-
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Build Generative AI Apps with No-Code Tools</h3>
-                    <p class="cert-issuer">Udemy</p>
-                    <p class="cert-date">Completed: 2024</p>
-                    <p class="cert-description">
-                        Practical course on building generative AI applications using no-code platforms. Learned to integrate AI APIs and create intelligent applications without extensive coding.
-                    </p>
-                    <a href="https://drive.google.com/file/d/1_x97w6N2kBKhxeo6M1HEHjgn0RdL-fWT/view?usp=sharing" target="_blank" class="cert-verify">View Certificate <i class="fas fa-external-link-alt"></i></a>
-                </div>
-
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>LeetCode Profile</h3>
-                    <p class="cert-issuer">Problem Solving Platform</p>
-                    <p class="cert-date">Active Profile</p>
-                    <p class="cert-description">
-                        Actively solving algorithmic problems to strengthen data structures and algorithms. Focused on improving problem-solving skills through consistent practice.
-                    </p>
-                    <a href="https://leetcode.com/u/jinee_123/" target="_blank" class="cert-verify">View Profile <i class="fas fa-external-link-alt"></i></a>
-                </div>
-
-                <div class="cert-card">
-                    <div class="cert-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>GeeksforGeeks Profile</h3>
-                    <p class="cert-issuer">Coding Practice Platform</p>
-                    <p class="cert-date">Active Profile</p>
-                    <p class="cert-description">
-                        Practicing DSA problems and preparing for technical interviews. Building strong foundation in competitive programming and algorithmic thinking.
-                    </p>
-                    <a href="https://www.geeksforgeeks.org/profile/jineesini1ex" target="_blank" class="cert-verify">View Profile <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-
-            <!-- Education Timeline -->
-            <div class="education-section">
-                <h3 class="education-title">Education</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h4>B.Tech in Computer Science Engineering</h4>
-                            <p class="timeline-institution">Lovely Professional University</p>
-                            <p class="timeline-date">2023 - 2027 (Expected)</p>
-                            <p class="timeline-details">
-                                CGPA: 8.14/10 | Specialization: Machine Learning | Relevant Coursework: Machine Learning, 
-                                Design and Analysis of Algorithms, Artificial Intelligence, Data Structures, 
-                                Statistics and Probability
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h4>Senior Secondary Education (12th)</h4>
-                            <p class="timeline-institution">Kendriya Vidyalaya</p>
-                            <p class="timeline-date">Passed: 2023</p>
-                            <p class="timeline-details">
-                                Successfully completed CBSE 12th standard with focus on Science stream (PCM - Physics, Chemistry, Mathematics)
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="title-underline"></div>
-                <p class="section-subtitle">Let's connect and collaborate</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's Work Together</h3>
-                    <p>
-                        I'm actively seeking SDE and Machine Learning opportunities for internships or full-time roles. 
-                        Whether you have a project in mind, need a developer for your team, or just want to connect, 
-                        I'd love to hear from you.
-                    </p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <a href="mailto:jineesingh1015@gmail.com">jineesingh1015@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Phone</h4>
-                                <a href="tel:+916263333154">+91 6263333154</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Location</h4>
-                                <p>Madhya Pradesh, India</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-social">
-                        <h4>Connect With Me</h4>
-                        <div class="social-links-large">
-                            <a href="https://github.com/jinee-s" target="_blank">
-                                <i class="fab fa-github"></i>
-                                <span>GitHub</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/jinee-singh-603826291/" target="_blank">
-                                <i class="fab fa-linkedin"></i>
-                                <span>LinkedIn</span>
-                            </a>
-                            <a href="https://leetcode.com/u/jinee_123/" target="_blank">
-                                <i class="fas fa-code"></i>
-                                <span>LeetCode</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Your Name *</label>
-                            <input type="text" id="name" name="name" required>
-                            <span class="error-message"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email *</label>
-                            <input type="email" id="email" name="email" required>
-                            <span class="error-message"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <input type="text" id="subject" name="subject" required>
-                            <span class="error-message"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="6" required></textarea>
-                            <span class="error-message"></span>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-submit">
-                            <span class="btn-text">Send Message</span>
-                            <span class="btn-loading">Sending...</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                        <div class="form-status"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Jinee Singh</h3>
-                    <p>CS Student | Machine Learning & Software Development</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Follow Me</h4>
-                    <div class="social-links">
-                        <a href="https://github.com/jinee-s" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/jinee-singh-603826291/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://leetcode.com/u/jinee_123/" target="_blank"><i class="fas fa-code"></i></a>
-                        <a href="mailto:jineesingh1015@gmail.com"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Jinee Singh. All rights reserved.</p>
-                <p>Built with <i class="fas fa-heart"></i> using HTML, CSS & JavaScript</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top" id="scroll-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
