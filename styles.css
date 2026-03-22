@@ -312,42 +312,44 @@ body.light-theme #particle-canvas {
 
 .about-content {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 22px;
+  grid-template-columns: 1.3fr 0.8fr;
+  gap: 32px;
+  align-items: start;
 }
 
-.about-text p { margin-bottom: 12px; color: var(--muted); }
+.about-text p { margin-bottom: 14px; color: var(--muted); font-size: 1rem; line-height: 1.6; }
 
 .about-stats {
-  margin-top: 16px;
+  margin-top: 24px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 16px;
 }
 
 .stat-item {
   border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--card);
-  padding: 12px;
+  padding: 18px 14px;
   text-align: center;
 }
 
 .stat-item h3 {
   color: var(--primary);
-  font-size: 1.3rem;
-  margin-bottom: 4px;
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+  font-weight: 700;
 }
 
-.stat-item p { color: var(--muted); font-size: 0.88rem; }
+.stat-item p { color: var(--muted); font-size: 0.9rem; }
 
-.about-highlights { display: grid; gap: 12px; }
+.about-highlights { display: grid; gap: 16px; }
 
 .highlight-card {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 12px;
-  align-items: start;
+  align-items: flex-start;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: var(--card);
